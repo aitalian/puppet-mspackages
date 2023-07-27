@@ -1,6 +1,6 @@
 {
   "name": "aitalian-mspackages",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Angelo Italiano",
   "summary": "A Puppet Module that makes it easy to include Microsoft packages for Linux operating systems.",
   "license": "Apache-2.0",
