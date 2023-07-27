@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.0.1: 2023-07-27
+* Removed reference to data type Stdlib::Compat::String as removed in stdlib 9.0.0 and higher 
+
 ### 1.0.0: 2021-07-27
 * On Ubuntu `>= 21.04` the `20.10` repository is forcibly used until more packages are available
 * Added RHEL 8 support
