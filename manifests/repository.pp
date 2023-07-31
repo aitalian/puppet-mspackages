@@ -7,8 +7,8 @@
 class mspackages::repository {
     case $::osfamily {
         'RedHat': {
-            # RHEL / CentOS version 6.x, 7.x, 8.x
-            if $::operatingsystemmajrelease =~ /^(6|7|8).*?$/ {
+            # RHEL / CentOS version 6.x, 7.x, 8.x, 9.x
+            if $::operatingsystemmajrelease =~ /^(6|7|8|9).*?$/ {
                 yumrepo { 'packages-microsoft-com-prod':
                     ensure   => present,
                     name     => 'packages-microsoft-com-prod',

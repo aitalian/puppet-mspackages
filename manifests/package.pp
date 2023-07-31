@@ -19,7 +19,7 @@ define mspackages::package (
 
     case $::osfamily {
         'RedHat': {
-            if $::operatingsystemmajrelease =~ /^(6|7|8).*?$/ {
+            if $::operatingsystemmajrelease =~ /^(6|7|8|9).*?$/ {
                 if $ensure in ['present', 'installed'] {
                     exec { "/usr/bin/yum install --enablerepo=packages-microsoft-com-prod -y ${name}":
                         environment => 'ACCEPT_EULA=Y',
