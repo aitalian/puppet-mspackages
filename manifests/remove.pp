@@ -10,7 +10,7 @@
 #       - 'msodbcsql17'
 #       - 'mssql-tools'
 class mspackages::remove (
-    Variant[Array, Array[String, 0]] $packages = [],
+    Variant[Array[String, 0]] $packages = [],
 ) {
     Array($packages)  # Validates $packages as an array
 
