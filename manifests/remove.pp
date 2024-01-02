@@ -10,9 +10,9 @@
 #       - 'msodbcsql17'
 #       - 'mssql-tools'
 class mspackages::remove (
-    Variant[Stdlib::Compat::Array, Array[String, 0]] $packages = [],
+    Variant[Array[String, 0]] $packages = [],
 ) {
-    validate_legacy(Array, 'validate_array', $packages)
+    Array($packages)  # Validates $packages as an array
 
     $packages.each |String $package| {
         $package_hash = {
@@ -22,7 +22,7 @@ class mspackages::remove (
             }
         }
 
-        validate_legacy(Hash, 'validate_hash', $package_hash)
+        Hash($package_hash)  # Validates $package_hash as a hash
 
         create_resources('mspackages::package', $package_hash)
     }
