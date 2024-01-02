@@ -12,8 +12,8 @@
 define mspackages::package (
     Variant[String, String[1]] $ensure = present,
 ) {
-    validate_legacy(String, 'validate_string', $name)
-    validate_legacy(String, 'validate_re', $ensure, '^(present|installed|absent)$')
+    String($name)  # Validates $name as a string
+    Pattern[/^(present|installed|absent)$/]($ensure)  # Validates $ensure against the pattern
 
     require mspackages::repository
 
