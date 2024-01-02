@@ -1,10 +1,12 @@
 # Changelog
 
-### 1.0.1: 2023-012-20
+### 1.0.1: 2024-01-02
 * Removed reference to data type Stdlib::Compat::String as removed in stdlib 9.0.0 and higher
+* Removed reference to data type Stdlib::Compat::Array as removed in stdlib 9.0.0 and higher
 * RHEL 9 added
 * Compatibility with Puppet 8
   * Lagacy facts convered
+  * 'validate_legacy' code lines replaced
 
 ### 1.0.0: 2021-07-27
 * On Ubuntu `>= 21.04` the `20.10` repository is forcibly used until more packages are available
