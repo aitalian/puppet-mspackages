@@ -10,9 +10,9 @@
 #       - 'msodbcsql17'
 #       - 'mssql-tools'
 class mspackages::install (
-    Variant[Stdlib::Compat::Array, Array[String, 0]] $packages = [],
+    Variant[Array, Array[String, 0]] $packages = [],
 ) {
-    validate_legacy(Array, 'validate_array', $packages)
+    Array($packages)  # Validates $packages as an array
 
     $packages.each |String $package| {
         $package_hash = {
@@ -22,7 +22,7 @@ class mspackages::install (
             }
         }
 
-        validate_legacy(Hash, 'validate_hash', $package_hash)
+        validate_hash($package_hash)
 
         create_resources('mspackages::package', $package_hash)
     }
